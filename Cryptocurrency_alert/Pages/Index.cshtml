@@ -1,10 +1,23 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Cryptocurrency alert";
 }
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+</head>
+<body style="background-color: black">
+
+    <div class="title" style="text-align: center; font-size: 50px; color: yellow;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">
+        <div class="title-text"> Welcome in Cryptocurrency alert app! </div>
+    </div>
+
+    <form method="post" style="text-align: center; margin-top: 40px">
+        <input type="email" name="emailaddress" />
+        <input type="submit" />
+    </form>
+
+</body>
+</html>

@@ -1,2 +1,39 @@
-﻿body {
+﻿.body {
+    font-size: 50px;
+    background-color: yellow;
+}
+
+.typewriter {
+    height: 0;
+    /*This part is important for centering*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.typewriter-text {
+    width: 40ch;
+    animation: typing 3s steps(40), blink .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    font-family: monospace;
+    font-size: 4em;
+}
+
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent
+    }
+
+    100% {
+        border-color: black;
+    }
 }
