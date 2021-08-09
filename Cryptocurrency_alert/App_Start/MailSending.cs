@@ -1,9 +1,4 @@
-﻿using System.IO;
-using System.Net;
-using System.Net.Mail;
-using System.Threading.Tasks;
-using MailKit.Net.Smtp;
-using MailKit.Security;
+﻿using System;
 using MimeKit;
 using SmtpClient = MailKit.Net.Smtp.SmtpClient;
 
@@ -19,7 +14,7 @@ namespace Cryptocurrency_alert.App_Start
             message = new MimeMessage();
         }
 
-        public void AssignContacts(string aFrom = "cryptocurrency.alert4@gmail.com", string aTo = "szlosekwojciech@gmail.com")
+        public void AssignContacts(string aFrom = "cryptocurrency.alert4@gmail.com", string aTo = "")
         {
             email.aFrom = aFrom;
             email.aTo = aTo;
@@ -33,12 +28,21 @@ namespace Cryptocurrency_alert.App_Start
         public void SendMail()
         {
             message.From.Add(new MailboxAddress("Cryptocurrency alert", email.aFrom));
-            message.To.Add(new MailboxAddress("Wojciech Szlosek", email.aTo));
-            message.Subject = "Wysłał mnie C#!!!";
+            message.To.Add(new MailboxAddress("", email.aTo));
+
+            DateTime thisDay = DateTime.Now;
+            message.Subject = "Cryptocurrency alert - " + thisDay.ToString("g");
+
             message.Body = new TextPart("plain")
             {
                 Text = email.text
             };
+
+            var emailBody = new BodyBuilder();
+            emailBody.TextBody = email.text;
+            emailBody.Attachments.Add(@"/Users/wojciechszlosek/Desktop/C#/Cryptocurrency_alert/Cryptocurrency_alert/cryptocurrency.pdf");
+
+            message.Body = emailBody.ToMessageBody();
 
             using (var client = new SmtpClient())
             {

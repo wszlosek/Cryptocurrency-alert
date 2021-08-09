@@ -12,6 +12,16 @@
     <None Remove="App_Start\" />
     <None Remove="MailKit" />
     <None Remove="MimeKit" />
+    <None Remove="IronPdf" />
+    <None Remove="Unirest-API" />
+    <None Remove="YahooFinanceApi" />
+    <None Remove="YahooFinanceClient" />
+    <None Remove="Microsoft.Data.Analysis" />
+    <None Remove="ServiceStack.Text" />
+    <None Remove="Vse.Web.Serialization.ControlledSerializationJsonConverter" />
+    <None Remove="AlphaVantage.Net.Core" />
+    <None Remove="AlphaVantage.Net.Crypto" />
+    <None Remove="AlphaVantage.Net.Forex" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
@@ -23,6 +33,12 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.15" />
     <PackageReference Include="MailKit" Version="2.14.0" />
     <PackageReference Include="MimeKit" Version="2.14.0" />
+    <PackageReference Include="IronPdf" Version="2021.3.1" />
+    <PackageReference Include="Microsoft.Data.Analysis" Version="0.18.0" />
+    <PackageReference Include="ServiceStack.Text" Version="5.11.0" />
+    <PackageReference Include="AlphaVantage.Net.Core" Version="2.0.2" />
+    <PackageReference Include="AlphaVantage.Net.Crypto" Version="2.0.2" />
+    <PackageReference Include="AlphaVantage.Net.Forex" Version="2.0.2" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Start\" />

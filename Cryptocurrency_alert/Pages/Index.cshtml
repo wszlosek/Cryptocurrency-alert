@@ -3,6 +3,7 @@
 @{
     ViewData["Title"] = "Cryptocurrency alert";
 }
+<h3>@ViewData["confirmation"]</h3>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 
@@ -14,10 +15,68 @@ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">
         <div class="title-text"> Welcome in Cryptocurrency alert app! </div>
     </div>
 
-    <form method="post" style="text-align: center; margin-top: 40px">
-        <input type="email" name="emailaddress" />
+    <form method="post" style="text-align: center; margin-top: 40px; color: ghostwhite;
+font-family: sans-serif">
+        <p style="font-size: 20px">Your currency:</p>
+        <select name="mainCurrency" style="margin-bottom: 43px">
+            <option value="">Select</option>
+            <option value="PLN">PLN</option>
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="JPY">JPY</option>
+            <option value="GBP">GBP</option>
+            <option value="CHF">CHF</option>
+        </select>
+        <p style="font-size: 20px">Select the currencies whose price you want to know:</p>
+        <ul class="checkbox" style="-webkit-column-count: 6; -moz-column-count: 6; column-count: 6;
+text-align:center; margin-left:31%">
+            <input type="checkbox" data-val="true" id="IsChecked" name="IsChecked" value="PLN">
+            <input name="IsChecked" type="hidden" value="false"> PLN
+            <br>
+            <input type="checkbox" data-val="true" id="IsChecked" name="IsChecked" value="USD">
+            <input name="IsChecked" type="hidden" value="false"> USD
+            <br>
+            <input type="checkbox" data-val="true" id="IsChecked" name="IsChecked" value="EUR">
+            <input name="IsChecked" type="hidden" value="false"> EUR
+            <br>
+            <input type="checkbox" data-val="true" id="IsChecked" name="IsChecked" value="JPY">
+            <input name="IsChecked" type="hidden" value="false"> JPY
+            <br>
+            <input type="checkbox" data-val="true" id="IsChecked" name="IsChecked" value="GBP">
+            <input name="IsChecked" type="hidden" value="false"> GBP
+            <br>
+            <input type="checkbox" data-val="true" id="IsChecked" name="IsChecked" value="CHF">
+            <input name="IsChecked" type="hidden" value="false"> CHF
+            <br>
+            <br>
+
+        </ul>
+        <ul class="checkbox" style="-webkit-column-count: 6; -moz-column-count: 6; column-count: 6;
+text-align:center; margin-left:31%; margin-top: 20px">
+            <input type="checkbox" data-val="true" id="IsChecked" name="IsChecked" value="Bitcoin">
+            <input name="IsChecked" type="hidden" value="false"> Bitcoin
+            <br>
+            <input type="checkbox" data-val="true" id="IsChecked" name="IsChecked" value="Ethereum">
+            <input name="IsChecked" type="hidden" value="false"> Ethereum
+            <br>
+            <input type="checkbox" data-val="true" id="IsChecked" name="IsChecked" value="Dogecoin">
+            <input name="IsChecked" type="hidden" value="false"> Dogecoin
+            <br>
+            <input type="checkbox" data-val="true" id="IsChecked" name="IsChecked" value="Litecoin">
+            <input name="IsChecked" type="hidden" value="false"> Litecoin
+            <br>
+            <input type="checkbox" data-val="true" id="IsChecked" name="IsChecked" value="NEO">
+            <input name="IsChecked" type="hidden" value="false"> NEO
+            <br>
+            <input type="checkbox" data-val="true" id="IsChecked" name="IsChecked" value="IOTA">
+            <input name="IsChecked" type="hidden" value="false"> IOTA
+            <br>
+            <br>
+        </ul>
+        <input style="margin-left:30px; margin-top: 45px" placeholder="Your email address"
+               type="email" name="emailaddress" />
         <input type="submit" />
     </form>
-
+    
 </body>
 </html>
