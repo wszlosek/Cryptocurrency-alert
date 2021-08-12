@@ -41,14 +41,14 @@ namespace Cryptocurrency_alert.Pages
         public void OnPost()
         {
 
-            // Financial_data xd = new Financial_data();
-            Console.WriteLine(EmailAddress);
+            Financial_data xd = new Financial_data();
+          //  Console.WriteLine(EmailAddress);
 
-            IsChecked.RemoveAll(t => t == "false");
+         //   IsChecked.RemoveAll(t => t == "false");
 
-            IsChecked.ForEach(Console.WriteLine);
+         //   IsChecked.ForEach(Console.WriteLine);
 
-            Console.WriteLine(mainCurrency);
+         //   Console.WriteLine(mainCurrency);
 
             // var doc = new pdfDocument(); 
             // EmailSending(EmailAddress);

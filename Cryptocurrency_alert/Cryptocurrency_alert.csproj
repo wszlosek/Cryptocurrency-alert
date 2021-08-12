@@ -22,6 +22,7 @@
     <None Remove="AlphaVantage.Net.Core" />
     <None Remove="AlphaVantage.Net.Crypto" />
     <None Remove="AlphaVantage.Net.Forex" />
+    <None Remove="FixerSharp" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
@@ -39,6 +40,7 @@
     <PackageReference Include="AlphaVantage.Net.Core" Version="2.0.2" />
     <PackageReference Include="AlphaVantage.Net.Crypto" Version="2.0.2" />
     <PackageReference Include="AlphaVantage.Net.Forex" Version="2.0.2" />
+    <PackageReference Include="FixerSharp" Version="1.2.2" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Start\" />
