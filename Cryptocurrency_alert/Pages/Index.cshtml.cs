@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
+using System.Threading;
 using System.Threading.Tasks;
 using Cryptocurrency_alert.App_Start;
 using Microsoft.AspNetCore.Mvc;
@@ -40,18 +41,14 @@ namespace Cryptocurrency_alert.Pages
 
         public void OnPost()
         {
+            Financial_data f = new Financial_data();
+            IsChecked.RemoveAll(t => t == "false");
 
-            Financial_data xd = new Financial_data();
-          //  Console.WriteLine(EmailAddress);
+            // create pdf document from data (api)
+            f.Core(mainCurrency, IsChecked);
 
-         //   IsChecked.RemoveAll(t => t == "false");
-
-         //   IsChecked.ForEach(Console.WriteLine);
-
-         //   Console.WriteLine(mainCurrency);
-
-            // var doc = new pdfDocument(); 
-            // EmailSending(EmailAddress);
+            Thread.Sleep(7000); // 7 sec
+            EmailSending(EmailAddress);
         }
 
         
@@ -59,12 +56,12 @@ namespace Cryptocurrency_alert.Pages
         {
             MailSending m = new MailSending();
             m.AssignContacts(aTo: address);
-            m.AssignContent(@"Hi! Thank you for using my website," +
+            m.AssignContent("Hi! Thank you for using my website. " +
+                "The attachment includes the generated currency report." +
                 "\n \n" +
-                "--Wojciech Szlosek");
+                "Wojciech Szlosek");
             m.SendMail();
         }
-
         
     }
 
