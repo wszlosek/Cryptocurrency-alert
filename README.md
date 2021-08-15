@@ -1,6 +1,6 @@
 # Cryptocurrency alert app!
 
-Simple-looking website that allows you to send information about the current prices of selected currencies and cryptocurrencies to the user's e-mail address. 
+A simple-looking website that allows you to send information about the current prices of selected currencies and cryptocurrencies to the user's e-mail address. 
 
 Project created with ASP.NET Core Razor.
 
