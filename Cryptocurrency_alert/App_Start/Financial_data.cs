@@ -74,8 +74,8 @@ namespace Cryptocurrency_alert.App_Start
             this.prices._USD = Math.Round(Fixer.Convert(Symbols.USD, symb, 1), 2);
             this.prices._EUR = Math.Round(Fixer.Convert(Symbols.EUR, symb, 1), 2);
             this.prices._JPY = Math.Round(Fixer.Convert(Symbols.JPY, symb, 1), 2);
-            this.prices._GBP = Math.Round(Fixer.Convert(Symbols.GBP, symb, 1), 2);
-            this.prices._CHF = Math.Round(Fixer.Convert(Symbols.CHF, symb, 1), 2);
+    //        this.prices._GBP = Math.Round(Fixer.Convert(Symbols.GBP, symb, 1), 2);
+      //      this.prices._CHF = Math.Round(Fixer.Convert(Symbols.CHF, symb, 1), 2);
 
             CryptoExchangeRate forexExchangeRate6 = await clientsC[0].GetExchangeRateAsync
                 (DigitalCurrency.BTC, pcc).ConfigureAwait(false);
@@ -92,14 +92,14 @@ namespace Cryptocurrency_alert.App_Start
             CryptoExchangeRate forexExchangeRate9 = await clientsC[1].GetExchangeRateAsync
                 (DigitalCurrency.LTC, pcc);
             this.prices._Lite = Math.Round(forexExchangeRate9.AskPrice, 2);
-
+/*
             CryptoExchangeRate forexExchangeRate10 = await clientsC[2].GetExchangeRateAsync
                 (DigitalCurrency.NEO, pcc);
             this.prices._NEO = Math.Round(forexExchangeRate10.AskPrice, 2);
 
             CryptoExchangeRate forexExchangeRate11 = await clientsC[2].GetExchangeRateAsync
                 (DigitalCurrency.IOTA, pcc);
-            this.prices._IOTA = Math.Round(forexExchangeRate11.AskPrice, 2);
+            this.prices._IOTA = Math.Round(forexExchangeRate11.AskPrice, 2); */
 
 
             var doc = new pdfDocument();

@@ -40,14 +40,14 @@ namespace Cryptocurrency_alert.App_Start
 
             var emailBody = new BodyBuilder();
             emailBody.TextBody = email.text;
-            emailBody.Attachments.Add(@"/Users/wojciechszlosek/Desktop/C#/Cryptocurrency_alert/Cryptocurrency_alert/cryptocurrency.pdf");
+            emailBody.Attachments.Add(@"/Users/wojciechszlosek/Desktop/Cryptocurrency-alert/Cryptocurrency_alert/cryptocurrency.pdf");
 
             message.Body = emailBody.ToMessageBody();
 
             using (var client = new SmtpClient())
             {
                 client.Connect("smtp.gmail.com", 587, false);
-                client.Authenticate(email.aFrom, password: "kryptowaluty");
+                client.Authenticate("cryptocurrency.alert4@gmail.com", password: "kryptowaluty");
                 client.Send(message);
                 client.Disconnect(true);
             }
